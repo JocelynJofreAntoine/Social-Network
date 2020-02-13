@@ -4,9 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Social Network</title>
 </head>
 <body>
-  <script type="module" src="main.js"></script>
+
+  <div id="root"></div>
+
+  <h4>registro nuevo usuario</h4>
+  <input id ="email" type= "email" placeholder="Ingresa Email">
+  <input id ="password" type="password" placeholder="Ingresa Contraseña">
+  <button class="btn_registrar" id="btn_registrar">Registrar</button>
+
+  <h4>ingreso de usuario existente</h4>
+  <input id ="email2" type= "email" placeholder="Ingresa Email">
+  <input id ="password2" type="password" placeholder="Ingresa Contraseña">
+  <button class="btn_ingresar" id="btn_ingresar">Ingresar</button>
+
+  <h4>ingreso de usuario con google</h4>
+  <button class="btn_google" id="btn_google">GOOGLE</button>
+
+  <div id="contenido"> </div>
+
+
+
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA1LoNbSSaoNSJA6AwRFGLdpJBRWmjDOj0",
+    authDomain: "redsocial2-cbaa6.firebaseapp.com",
+    databaseURL: "https://redsocial2-cbaa6.firebaseio.com",
+    projectId: "redsocial2-cbaa6",
+    storageBucket: "redsocial2-cbaa6.appspot.com",
+    messagingSenderId: "744949305692",
+    appId: "1:744949305692:web:be8c67b42efd9ac89ef199",
+    measurementId: "G-2SGHVDPWXW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script type="module" src="main.js"></script>
 </body>
 </html>
