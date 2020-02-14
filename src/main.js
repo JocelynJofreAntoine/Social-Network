@@ -124,3 +124,30 @@ user.sendEmailVerification()
     console.log(error)
 })
 }
+
+
+//publicaciones 
+  
+const db = firebase.firestore ();
+
+  const publicacion =document.getElementById('btn_post');
+  publicacion.addEventListener('click', ()=>{
+      console.log('hola')
+  
+      let name= document.getElementById('nombre').value;
+      let posteo = document.getElementById('post').value;
+  
+  
+  db.collection("post").add({
+    post: posteo,
+    nombre: name,
+    
+}) 
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
+
+})
