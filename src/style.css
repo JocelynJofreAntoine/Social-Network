@@ -1,0 +1,29 @@
+/*Eliminar margen y padding que ponen navegadores por defecto*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    /* Elimina desplazamiento horizontal (scroll) */
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+.login, .register {
+  width: 21.875rem;
+  margin: 0.625rem auto;
+  text-align: center;
+  color: white;
+}
+

@@ -5,7 +5,14 @@
 //myFunction();
 
 //REGISTRO DE USUARIO
+const verlo = document.getElementById('lala');
+verlo.innerHTML=`
 
+<h4>registro nuevo usuario</h4>
+<input id ="email" type= "email" placeholder="Ingresa Email">
+<input id ="password" type="password" placeholder="Ingresa Contraseña">
+<button class="btn_registrar" id="btn_registrar">Registrar</button>
+`
 const registrar= document.getElementById ('btn_registrar');
 registrar.addEventListener('click', () => {
     console.log('fvg');
@@ -29,6 +36,13 @@ registrar.addEventListener('click', () => {
 });
 
 //INGRESO DE USUARIO
+const goog = document.getElementById('root');
+goog.innerHTML=`
+<h4>ingreso de usuario existente</h4>
+  <input id ="email2" type= "email" placeholder="Ingresa Email">
+  <input id ="password2" type="password" placeholder="Ingresa Contraseña">
+  <button class="btn_ingresar" id="btn_ingresar">Ingresar</button>
+  `
 
 //aca le decimos que al presionar el btn nos guarde el mail y el password
 const ingresar= document.getElementById ('btn_ingresar');
@@ -39,6 +53,8 @@ ingresar.addEventListener('click', () => {
 
     console.log(correo2);
     console.log(contrasena2);
+
+    
 
     //aca se guardan los datos de autentificación en firebase
     firebase.auth().signInWithEmailAndPassword(correo2, contrasena2)
@@ -53,6 +69,11 @@ ingresar.addEventListener('click', () => {
 });  
 
 //REGISTRO CON GOOGLE
+const ingreso = document.getElementById('lele');
+ingreso.innerHTML=`
+  <h4>ingreso de usuario con google</h4>
+  <button class="btn_google" id="btn_google">GOOGLE</button>`
+
 const google = document.getElementById ('btn_google');
 google.addEventListener('click', () => {
     let provider = new firebase.auth.GoogleAuthProvider();
@@ -112,32 +133,37 @@ function aparece (){
     })  
 }
 
-    //función para verificar mediante correo
-
+//FUNCIÓN PARA VERIFICAR MEDIANT CORREO
 function verificar(){
-let user = firebase.auth().currentUser;
-user.sendEmailVerification()
-.then (function(){
-    console.log('enviando correo')
-})
-.catch (function(error){
-    console.log(error)
-})
+    let user = firebase.auth().currentUser;
+    user.sendEmailVerification()
+        .then (function(){
+        console.log('enviando correo')
+         })
+        .catch (function(error){
+        console.log(error)
+        })
 }
 
 
-//publicaciones 
-  
-const db = firebase.firestore ();
+//FUNCION QUE MANDA LAS PUBLICACIONES A FIREBASE
+const leer = document.getElementById('lolo');
+leer.innerHTML=`
+  <input type="text" id="nombre" placeholder="nombre" class="nombre">
+  <textarea class ="post" id="post" placeholder="ingresa tu texto acá"></textarea>
+  <button class="btn_post" id="btn_post">Publicar</button>`
 
+const db = firebase.firestore ();
+ //aca le decimosq que al hacer click en el boton nos guarde el valor
   const publicacion =document.getElementById('btn_post');
   publicacion.addEventListener('click', ()=>{
       console.log('hola')
-  
+
+      //variables de los valores que vamos a guardar
       let name= document.getElementById('nombre').value;
       let posteo = document.getElementById('post').value;
   
-  
+  //colección que tenemos en database
   db.collection("post").add({
     post: posteo,
     nombre: name,
@@ -151,3 +177,20 @@ const db = firebase.firestore ();
 });
 
 })
+
+//leer datos desde firebase
+
+
+let impPost  = document.getElementById('imp_post');
+db.collection("post").get()
+.then((querySnapshot) => {
+    publicacion.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().post}`);
+        publicacion.innerHTML += `
+        
+        <div class ="imp_post" id="imp_post" >${doc.data().post}</div>
+        
+        `
+    });
+});
