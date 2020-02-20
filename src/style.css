@@ -8,8 +8,8 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     color: white;
+    font-family: 'Quicksand', sans-serif;
     /* Elimina desplazamiento horizontal (scroll) */
     overflow-x: hidden;
     width: 100vw;
@@ -20,17 +20,97 @@ body {
     background-repeat: no-repeat;
 }
 
-.login, .register {
-  width: 21.875rem;
-  margin: 0.625rem auto;
+.login__logo, .register__logo {
+  display: flex;
+  margin-top: 2.625rem;
+  width: 13.375rem;
+  margin-left: 36rem;
   text-align: center;
-  color: white;
 }
 
-.login__title, .register__title {
-  font-size: 1.875rem;
+.login__title, .register__title{
+  text-align: center;
 }
 
-.login__logo{
-  width: 20%;
+.login__inputText, .login__inputPass, .register__inputPass, .register__inputText{
+  text-align: center;
+  margin-left: 30.5rem;
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+  width: 30%;
+  padding: 0.625rem;
+  border: none;
 }
+
+.login__button, .register__button{
+  border: none;
+  width: 9%;
+  color: black;
+  font-size: 15px;
+  background: #aaa;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  margin-left: 47%;
+  margin-top: 2rem;
+}
+
+.register__button, .btn__icon{
+  border: none;
+  width: 9%;
+  color: black;
+  font-size: 15px;
+  background: #E58E00;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  margin-left: 47%;
+  margin-top: 2rem;
+}
+
+.login__button:hover, .register__button:hover {
+  background: #E58E00;
+  transition: background .5s;
+}
+
+.texto{
+  font-size: 15px;
+  margin-left: 37%;
+  margin-top: 2rem;
+}
+
+.btn__rrss{
+  background: none;
+  border:none;
+}
+
+.post, .imp_post{
+  margin-left: 28.5rem;
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+  width: 488px;
+  height: 88px;
+  resize:none;
+  padding: 0.625rem;
+  border-radius: 20px;
+}
+
+.imp_post{
+ background:none;
+ color: white;
+ font-family:'Quicksand', sans-serif;
+}
+
+.btn_post{
+  border: none;
+  width: 9%;
+  color: black;
+  font-size: 15px;
+  background: #E58E00;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  margin-left: 47%;
+  margin-top: 1rem;
+}
+

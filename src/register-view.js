@@ -40,9 +40,8 @@ export function registro (){
     //REGISTRO CON GOOGLE
     const ingreso = document.getElementById('lele');
     ingreso.innerHTML=`
-        <button type="button"  class="btn__rrss" id="login__googleBtn">
-            <img src="img/googleColor.svg" alt="logo Google" class="btn__icon">
-        </button>`
+        <p class="texto">Ahora tambien puedes crear tu registro con GOOGLE</p>
+        <button type="button" class="btn__icon" id="login__googleBtn"> GOOGLE </button>`
     
     const google = document.getElementById ('login__googleBtn');
     google.addEventListener('click', () => {

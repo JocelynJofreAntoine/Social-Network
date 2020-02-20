@@ -9,6 +9,7 @@ export function post (){
     const leer = document.getElementById('root');
     leer.innerHTML=`
       <img src="img/logo2.png" alt="logo Finger Food" class="login__logo">
+      
       <textarea class ="post" id="post" placeholder="ingresa tu texto acá"></textarea>
       <button class="btn_post" id="btn_post">Publicar</button>
       <button class="btn_post" id="btn_close">Cerrar sesion</button>

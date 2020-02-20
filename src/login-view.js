@@ -23,7 +23,8 @@ goog.innerHTML=`
         </div>
 
         <input type="submit" value="Acceder" id="login__accept" class="login__button">
-        <input type="submit" value="registrate" id="register" class="login__button">
+        <p class="texto">Aún no estas registrado? Haz click en el siguiente botón</p>
+        <input type="submit" value="Registrate" id="register" class="register__button">
 
 
   </div>    
