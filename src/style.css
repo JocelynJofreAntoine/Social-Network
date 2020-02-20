@@ -27,3 +27,10 @@ body {
   color: white;
 }
 
+.login__title, .register__title {
+  font-size: 1.875rem;
+}
+
+.login__logo{
+  width: 20%;
+}
